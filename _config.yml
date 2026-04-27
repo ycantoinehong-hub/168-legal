@@ -1,0 +1,12 @@
+title: 168
+description: Legal pages for the 168 app
+theme: jekyll-theme-minimal
+baseurl: /168-legal
+
+# Clean URLs: /privacy instead of /privacy.html
+permalink: /:title
+
+# Don't process these
+exclude:
+  - README.md
+  - .gitignore
