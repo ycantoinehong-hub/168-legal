@@ -75,6 +75,16 @@ You can delete your account at any time in Settings → Account → Delete Accou
 
 We use this information only to unlock Pro features for your account. Subscription terms (price, renewal, cancellation) are governed by Apple's standard subscription terms; you can manage your subscription in iOS Settings → Apple ID → Subscriptions.
 
+### RevenueCat (subscription manager)
+
+We use [RevenueCat](https://www.revenuecat.com/) to validate Apple receipts and track subscription status across devices. RevenueCat receives:
+
+- An anonymous user identifier we generate (or your account ID if you sign in)
+- The Apple receipt and resulting subscription state (active, expired, refunded)
+- Device platform and app version (so RevenueCat knows which storefront)
+
+RevenueCat does **not** receive your time entries, calendar events, HealthKit data, name, or email. RevenueCat's privacy policy: <https://www.revenuecat.com/privacy>.
+
 ---
 
 ## 5. Diagnostics and crash reports
@@ -128,6 +138,7 @@ The app integrates with the following services. Each is invoked only when you ta
 | **Apple HealthKit** | You connect Apple Health | Read-only, on-device only |
 | **Apple Calendar (EventKit)** | You connect Apple Calendar | Read-only, on-device only |
 | **Apple App Store / StoreKit** | You purchase Pro | Apple handles payment; we receive a subscription receipt |
+| **RevenueCat** | You purchase or restore Pro | Anonymous user ID, Apple receipt, subscription status |
 | **Apple Push Notification service (APNs)** | You enable cross-device notifications via cloud sync | Device push token |
 | **Google Calendar API** | You connect Google Calendar | OAuth read-only access to your primary calendar |
 | **Our backend (cloud sync)** | You enable cloud sync or create an account | Sync data described in Section 2 |
